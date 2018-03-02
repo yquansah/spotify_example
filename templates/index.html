@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+Index Page
+{% endblock %}
+
+{% block content %}
+	{% if r_text %}
+		<h2> {{ r_text }} </h2>
+	{% endif %}
+{% endblock %}

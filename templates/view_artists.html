@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+
+{% block title %}
+User Login
+{% endblock %}
+
+
+{% block content %}
+	{% if artists %}
+		{% for key, value in artists.items() %}
+			<h1 style="color:red;"> {{ key }} </h1>
+			<h3> Related Artists </h3>
+				<ul>
+				{% for elem in value['related_artists'] %}
+					<li style="display:inline;"> {{ elem }}; </li>
+				{% endfor %}
+				</ul> 
+			<h3> Top Tracks </h3>
+				<ul>
+				{% for elem in value['top_tracks'] %}
+					<li style="display:inline;"> {{ elem }}; </li>
+				{% endfor %}
+				</ul> 
+		{% endfor %}
+	{% endif %}
+	<button type="button" onclick="location.href = '/main'"> Go Back </button>
+{% endblock %}

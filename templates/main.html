@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Index Page
+{% endblock %}
+
+{% block content %}
+	<div style="text-align:center;">
+		<h1> Welcome To Spotify API </h1>
+		<form action="" method="post">
+			{{ main_form.hidden_tag() }}
+			{{ wtf.form_field(main_form.search_name) }}
+			<br>
+			{{ main_form.submit_button }}
+		</form>
+		<br/>
+		<button type="button" onclick="location.href = '/view_artists'"> View Artist(s) Info </button>
+	</div>
+{% endblock %}
